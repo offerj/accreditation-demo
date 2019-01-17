@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+<title>myCASA</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link rel="stylesheet" href="css/all.min.css">
+
+	<link rel="stylesheet" href="furnace.min.css">
+	<link rel="stylesheet" href="lead.css">
+	<script type="text/javascript" src="furnace.min.js"></script>
+
+
+
+
+</head>
+
+<body class="live-demo au-body au-grid">
+
+<main class="au-grid">
+	<div class="header">
+		<div class="container">
+			<div class="row">
+					<div class="logo au-body au-body--dark col-md-7">
+						<a href="index.html"><img src="CASALOGO-white-i.svg" width="256"></a>
+					</div>
+					<div class="user">
+						<div class="au-body au-body--dark col-md-5">
+						   <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+					</div>
+
+
+			</div>
+		</div>
+	</div>
+  <div class="banner"><div class=container>
+      <style>
+        .banner {padding-left: 25px;}
+        .banner {padding-top: 10px;}
+        .banner {padding-bottom: 10px;}
+
+      </style>
+      This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+    </div></div>
+
+	<div class="body">
+		<div class="container">
+
+			<div class="col-md-8">
+
+
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+			  <ul class="au-link-list au-link-list--inline">
+				<li><a href="welcome.html">myCASA</a></li>
+				  <li>Drone registration</li>
+			  </ul>
+			</nav>
+
+
+<div class="au-body">
+<br>
+	<div role="alert" class="quizMessage au-body au-page-alerts au-page-alerts--error"><h3></h3></div>
+	<h1 class="au-header-heading">Safety quiz</h1>
+	<a class="au-direction-link au-direction-link--left" href="01-drone-registration-video.html">Back</a>
+<p>&nbsp;</p>
+	<div class="quizContainer">
+				<h3 class="questionCounter"></h3>
+        <h4 class="question"></h4>
+        <ul class="choiceList"></ul>
+				<p>&nbsp;</p>
+				<div id="result" class="au-callout">
+					<h4></h4>
+					<p></p>
+				</div>
+				<p>&nbsp;</p>
+        <div class="nextButton"><button class="au-btn">Next Question</button></div>
+        <br>
+    </div>
+
+</div>
+
+						<hr />
+
+<a href="#" class="au-btn au-btn--secondary">
+  Save and exit
+</a>&nbsp; to continue this application later
+
+				</div>
+
+		</div>
+	</div>
+
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+<script type="text/javascript" src="furnace.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script>
+
+var questions = [{
+	question: "Keeping your drone within your visual line of sight means",
+	choices: ["Seeing it with binoculars", "Seeing it with your own, unaided eyesight", "Seeing it via your drone’s on-board camera", "Seeing it with a telescope"],
+	correctAnswer: 1
+}, {
+	question: "What is the maximum height above ground level that you can fly your drone?",
+	choices: ["30 metres", "300 metres", "120 metres", "150 metres"],
+	correctAnswer: 2
+}, {
+	question: "You must keep your drone 30 metres away from",
+	choices: ["Only people you don’t know, friends and family are allowed, friends and family are allowed",
+	"Everyone. Only those involved in the direct operation of the drone are allowed within 30 metres",
+	"Only from people you haven’t asked permission to fly close to",
+	"Only people who have seen the drone"],
+	correctAnswer: 1
+}/*, {
+	question: "How many drones can you fly at a time?",
+	choices: ["One", "As many as you want", "Ten", "Three"],
+	correctAnswer: 0
+}*/, {
+	question: "You can fly directly over other people",
+	choices: ["Providing you are more than 30 metres above them",
+	"Providing they are all wearing hardhats",
+	"If you gained their permission",
+	"Never. You can’t fly over people regardless of height"],
+	correctAnswer: 3
+}/*, {
+	question: "Recreational drone operators can fly within 5.5km of a major airport (controlled aerodrome)",
+	choices: ["In between flights or when the airport is not in use",
+	"Providing the drone isn’t within the approach and departure paths",
+	"Only at night",
+	"Never"],
+	correctAnswer: 3
+}*/, {
+	question: "What should you do if you become aware of a manned aircraft flying towards your location?",
+	choices: ["Stay in the air",
+	"Fly higher",
+	"Land as soon as it is safe to do so",
+	"Cut the motors and crash"],
+	correctAnswer: 2
+}/*, {
+	question: "It is legal to fly for money (commercially) providing",
+	choices: ["You declare your earnings to the tax office",
+	"You provide a receipt",
+	"You first gain insurance",
+	"You have your drone operator certificate, or you are flying in the sub-2kg /landholder excluded category"],
+	correctAnswer: 3
+}, {
+	question: "Flying your drone in Sydney Harbour is",
+	choices: ["Allowed",
+	"Allowed only during the day",
+	"Allowed only during the night",
+	"Never allowed, it is a restricted area"],
+	correctAnswer: 3
+}, {
+	question: "CASA’s app showing you where you can and can’t fly is called",
+	choices: ["Can I fly there?",
+	"Where am I?",
+	"Run away check",
+	"Airports near me"],
+	correctAnswer: 0
+}*//*, {
+	question: "Before every flight, you should",
+	choices: ["Check the weather",
+	"Ensure your drone’s battery is charged",
+	"The propellers are securely fastened",
+	"All of the above"],
+	correctAnswer: 3
+}*//*, {
+	question: "The aviation acronym ‘AGL’ stands for",
+	choices: ["A good landing",
+	"Above ground level",
+	"Aerial gust limits",
+	"Aviate, gravitate, levitate"],
+	correctAnswer: 1
+}*//*, {
+	question: "As well as following the aviation safety rules, you also need to follow local legislation for",
+	choices: ["National Parks/councils",
+	"Privacy",
+	"Environmental agencies",
+	"All of the above"],
+	correctAnswer: 3
+}*//*, {
+	question: "If you see a drone operator breaking the aviation safety rules, you should",
+	choices: ["Scream and shout ‘Satan’",
+	"Shoot down the drone",
+	"Pretend you didn’t see anything",
+	"Report it to the Civil Aviation Safety Authority"],
+	correctAnswer: 3
+}*//*, {
+	question: "What’s the heaviest fine you can receive for breaching Australia’s drone safety laws?",
+	choices: ["$900",
+	"$1,500",
+	"$9,000",
+	"$10,500"],
+	correctAnswer: 3
+}*/];
+
+var currentQuestion = 0;
+var questionTotal = questions.length;
+var correctAnswers = 0;
+var quizOver = false;
+
+$(document).ready(function () {
+//alert(questionTotal);
+	displayCurrentQuestion();
+	highlight();
+	$(".quizMessage, #result").hide();
+	$(".nextButton button").on("click", function () {
+			if (!quizOver) {
+					value = $("input[type='radio']:checked").val();
+					if (value == undefined) {
+							$(".quizMessage h3").text("Please select an answer");
+							$(".quizMessage").show().offset().top;
+					} else {
+							$(".quizMessage").hide();
+							highlight();
+							//$("input[type='radio']:checked").change(function () {
+							if (value == questions[currentQuestion].correctAnswer) {
+									correctAnswers++;
+							}
+							currentQuestion++;
+							if (currentQuestion < questions.length) {
+									displayCurrentQuestion();
+									highlight();
+							} else {
+									if (correctAnswers < 4){
+									displayScoreTryAgain();
+									$(".nextButton button").text("Try Again");
+									$('.question, .choiceList, .questionCounter').hide();
+									//$(questionClass).text(displayQuestions);
+									quizOver = true;
+									$('.nextButton button').click(function(){
+									  location.reload();
+									});
+								} else if (correctAnswers >= 4) {
+									displayScore();
+									$(".nextButton button").text("Next");
+									$('.nextButton button').click(function(){
+									  window.location = '05a-drone-registration-drone-details.html';
+									});
+									$('.question, .choiceList, .questionCounter').hide();
+									quizOver = true;
+								}
+							}
+					//	}
+					}
+			} else { // quiz is over and clicked the next button (which now displays 'Play Again?'
+					quizOver = false;
+					$(".nextButton button").text("Next Question");
+					resetQuiz();
+					displayCurrentQuestion();
+					hideScore();
+					$('.question, .choiceList').show().offset().top;
+			}
+	});
+
+});
+
+// This displays the current question AND the choices
+function displayCurrentQuestion() {
+
+	console.log("In display current Question");
+
+	var question = questions[currentQuestion].question;
+	var questionClass = $(".quizContainer > .question");
+	var choiceList = $(".quizContainer > .choiceList");
+	var numChoices = questions[currentQuestion].choices.length;
+
+	$(questionClass).text(question);
+
+	var questionCurrentCounter = currentQuestion + 1;
+	$('.questionCounter').text("Question " + questionCurrentCounter + " out of " + questionTotal);
+	$(choiceList).find("li").remove();
+
+	var choice;
+	for (i = 0; i < numChoices; i++) {
+			choice = questions[currentQuestion].choices[i];
+			$('<li><label class="au-control-input"><input type="radio" class="au-control-input__input" value=' + i + ' name="dynradio" /><span class="au-control-input__text">' + choice + '</span></label></li>').appendTo(choiceList);
+	}
+}
+
+function resetQuiz() {
+	currentQuestion = 0;
+	correctAnswers = 0;
+	hideScore();
+}
+
+function displayScoreTryAgain() {
+	$("#result h4").text("Please try again.");
+	$("#result p").text("You scored: " + correctAnswers + " out of " + questions.length);
+	$("#result").show();
+	//$("#result").text(displayQuestions);
+}
+
+function displayScore() {
+	$("#result h4").text("Congrats.");
+	$("#result p").text("You scored: " + correctAnswers + " out of " + questions.length + ". You may proceed to the next step.");
+	$("#result").show();
+}
+
+function hideScore() {
+	$("#result").hide();
+}
+
+function highlight(){
+	$("input[type='radio']").change(function () {
+		value = $("input[type='radio']:checked").val();
+		//alert(value);
+		if (value == questions[currentQuestion].correctAnswer) {
+			$("input[type='radio']:checked").parent().parent().addClass("correctAnswer");
+			$("input[type='radio']:not(:checked)").attr("disabled", true);
+		}
+		else{
+			//choice = questions[currentQuestion].choices[i];
+
+			$("input[type='radio']:checked").parent().parent().addClass("inCorrectAnswer");
+			$("input[type='radio']:not(:checked)").attr("disabled", true);
+
+			$("input[type='radio']").each(function(){
+				//value = $("input[type='radio']").val();
+				correct = questions[currentQuestion].correctAnswer;
+				//alert(value );
+					//if ([value=correct]){
+						$("input[value="+correct+"]").parent().parent().addClass("correctAnswerNT");
+					//}
+			});
+		}
+	 });
+}
+</script>
+
+</body>
+</html>

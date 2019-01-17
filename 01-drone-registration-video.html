@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+<title>Drone Registration</title>
+
+	<link rel="stylesheet" href="furnace.min.css">
+	<link rel="stylesheet" href="lead.css">
+
+
+
+</head>
+
+<body class="live-demo au-body au-grid arn-application">
+
+
+<main class="au-grid">
+
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+					<div class="logo au-body au-body--dark">
+						<a href="index.html"><img src="CASALOGO-white-i.svg" width="256"></a>
+					</div>
+					<div class="user">
+						<div class="au-body au-body--dark">
+						   <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+					</div>
+
+
+			</div>
+		</div>
+	</div>	<div class="banner">
+	<div class=container>
+		<style>
+			.banner {padding-left: 25px;}
+			.banner {padding-top: 10px;}
+			.banner {padding-bottom: 10px;}
+
+		</style>
+		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+	</div>
+	</div>
+
+
+	<div class="body">
+		<div class="container">
+
+			<div class="col-xs-6">
+
+
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+			  <ul class="au-link-list au-link-list--inline">
+				<li><a href="welcome.html">myCASA</a></li>
+				  <li>Drone registration</li>
+			  </ul>
+			</nav>
+
+
+
+			<header class="au-header" role="banner">
+				<h1 class="au-header-heading">Drone registration</h1>
+			</header>
+
+<div class="au-body">
+
+<p>Please watch this short video on drone safety. It contains important safety information which you will need to know when flying your drone.<br><br>
+	After the video is complete, you will take a short quiz based on the information in the video.<br><br>
+	You will need to answer a minimum of four questions correctly before moving on to the details of your drone.</p>
+<br>
+	<div id="player"></div>
+
+	<br><br>
+
+
+<a class="au-btn hidden" href="quiz.html" id="start">Start safety quiz</a>
+
+</div>
+
+					<hr />
+
+<a href="#" class="au-btn au-btn--secondary">
+  Save and exit
+</a>&nbsp; to continue this application later
+
+				</div>
+
+			<!--
+			<div class="row">
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			</div>-->
+
+		</div>
+	</div>
+
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+<script type="text/javascript" src="furnace.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-validate.js"></script>
+<script src="https://www.youtube.com/player_api"></script>
+
+<script>
+
+	
+	window.addEventListener('touchstart', function() {
+  $("#start").removeClass("hidden");
+});
+	
+    // create youtube player
+    var player;
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: 'pL8wJHPIRUc',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+    }
+
+    // autoplay video
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // when video ends
+    function onPlayerStateChange(event) {
+        if(event.data === 0) {
+            $("#start").removeClass("hidden");
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
